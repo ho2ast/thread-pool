@@ -3,7 +3,6 @@ package com.threadpool;
 import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.Executor;
 
 class ThreadPoolTest {
 
