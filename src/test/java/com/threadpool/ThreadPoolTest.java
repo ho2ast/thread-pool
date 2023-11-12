@@ -7,8 +7,8 @@ import java.util.concurrent.CountDownLatch;
 class ThreadPoolTest {
 
   @Test
-  void submittedTaskAreExecuted() throws InterruptedException {
-    final ThreadPool executor = new ThreadPool(2);
+  void submittedTaskAreExecuted() {
+    final ThreadPool executor = new ThreadPool(100);
     final int numTasks = 100;
     final CountDownLatch latch = new CountDownLatch(numTasks);
 
@@ -18,7 +18,7 @@ class ThreadPoolTest {
         executor.execute(() -> {
           System.err.println("Thread '" + Thread.currentThread().getName() + "' executes a task " + finalI);
           try {
-            Thread.sleep(10);
+            Thread.sleep(1);
           } catch (InterruptedException e) {
 //            Thread.currentThread().interrupt();
           }
